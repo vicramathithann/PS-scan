@@ -13,15 +13,15 @@ import java.util.concurrent.Executors;
         int endPort = 0;
 
         try {
-            // Get target host
+            
             System.out.print("Enter the target host (domain or IP address): ");
             host = scanner.nextLine();
 
-            // Validate host (try to resolve it)
+           
             InetAddress inetAddress = InetAddress.getByName(host);
             System.out.println("Resolved host: " + inetAddress.getHostAddress());
 
-            // Get and validate port range
+            
             System.out.print("Enter the starting port : ");
             startPort = scanner.nextInt();
             System.out.print("Enter the ending port : ");
@@ -53,7 +53,7 @@ import java.util.concurrent.Executors;
 
         executor.shutdown();
         while (!executor.isTerminated()) {
-            // Wait for threads to finish
+            
         }
 
         System.out.println("Scan completed.");
@@ -78,7 +78,7 @@ import java.util.concurrent.Executors;
             } catch (IllegalArgumentException e) {
                 System.err.println("Invalid timeout/port for port " + port + ": " + e.getMessage());
             } catch (Exception e) {
-                // Closed/filtered ports are expected and not logged as errors
+                
             }
         }
     }
